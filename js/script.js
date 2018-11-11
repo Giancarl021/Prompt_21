@@ -353,7 +353,7 @@ function music(cmd, e) {
         cmd = cmd.replace('-' + op, '');
         if (cmd != '  changedInput  ') cmd = cmd.replaceChar(' ', '');
     } catch (exception) {
-        op = 'w';
+        op = -1;
     }
     let i, j = [];
     switch (cmd) {
@@ -365,6 +365,7 @@ function music(cmd, e) {
             break;
         case 'play':
         case 'start':
+        op = 'w';
             let src = ['https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124014750&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/240837085&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/389721078&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
