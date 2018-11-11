@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    overflow: hidden;
+}
+
+#promptIn {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    font-family: 'VT323', monospace;
+    font-size: 2vh;
+    color: rgb(255, 255, 0);
+    border: 0px;
+    margin: 0;
+    outline: 0;
+    resize: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.glitch {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/noise.gif');
+    background-size: 15%;
+    animation: hueRotate 1s linear infinite;
+}
+
+@keyframes hueRotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Janelas */
+
+.window-frame {
+    position: absolute;
+    /* resize: both; */
+    overflow: hidden;
+    background-color: lightgray;
+    top: calc(50% - 250px);
+    min-width: 400px;
+    min-height: 300px;
+    max-width: 90%;
+    max-height: 90%;
+    left: 50%;
+    transform: translate(-50%, -15px);
+    width: 500px;
+    height: 350px;
+    outline: 0.5px black solid;
+}
+
+.window-bar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    height: 30px;
+    background-color: gray;
+    user-select: none;
+    cursor: move;
+    outline: 0.5px black solid;
+}
+
+.window-close {
+    position: absolute;
+    left: calc(100% - 30px);
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 47, 47);
+    color: white;
+    outline: 0.5px black solid;
+    cursor: pointer;
+}
+
+.window-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Consolas', monospace;
+}
+
+.window-content {
+    position: relative;
+    top: 30px;
+    height: calc(100% - 40px);
+    width: 100%;
+    z-index: -1;
+}
+
+.window-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-family: 'Consolas', monospace;
+    font-size: 2vh;
+    color: black;
+    border: 0px;
+    margin: 0;
+    outline: 0;
+    resize: none;
+    overflow: visible;
+}
+
+.window-musicplayer {
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 40px);
+}
+
+.window-musicplayer-timebar {
+    position: absolute;
+    width: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: calc(100% + 40px);
+    pointer-events: none;
+}
+
+.window-musicplayer-playbutton {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: calc(50% - 20px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: teal; */
+}
