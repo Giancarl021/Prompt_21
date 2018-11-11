@@ -353,7 +353,7 @@ function music(cmd, e) {
         cmd = cmd.replace('-' + op, '');
         if (cmd != '  changedInput  ') cmd = cmd.replaceChar(' ', '');
     } catch (exception) {
-        op = -1;
+        op = 'w';
     }
     let i, j = [];
     switch (cmd) {
